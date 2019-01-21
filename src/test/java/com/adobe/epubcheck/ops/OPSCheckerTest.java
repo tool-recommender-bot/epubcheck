@@ -1184,5 +1184,13 @@ public class OPSCheckerTest
     testValidateDocument("xhtml/invalid/time-in-time.xhtml", "application/xhtml+xml",
         EPUBVersion.VERSION_3);
   }
+  
+  @Test
+  public void testIdRefNotNCName()
+  {
+    // tests that Id-referencing attributes can refer to non-NCName IDs
+    testValidateDocument("xhtml/valid/id-ref-not-ncname.xhtml", "application/xhtml+xml",
+        EPUBVersion.VERSION_3, true);
+  }
 
 }
